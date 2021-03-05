@@ -7,14 +7,13 @@ public class ClockAngles {
       throw new IllegalArgumentException();
     }
     // hours + fractions of an hour * 360 degrees / 12 hours
-    return ((hours % 12) + ((minutes % 60) / 60)) * 360 / 12 ;
+    return ((hours % 12) + (minutes / 60)) * 360 / 12 ;
   }
 
   public static double minuteHandAngle(double minutes) throws IllegalArgumentException {
     if (minutes >= 60 || minutes < 0) {
       throw new IllegalArgumentException();
     }
-
-    return (minutes % 60) / 60 * 360;
+    return minutes * 360 / 60;
   }
 }
